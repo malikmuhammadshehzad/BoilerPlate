@@ -27,7 +27,10 @@ const LoginScreen = () => {
       username: userName,
       password: password,
     };
+     
     dispatch(loginUser(obj));
+    console.log("userData:", userData);
+    navigation.navigate('home')
   };
 
   return (
@@ -55,13 +58,13 @@ const LoginScreen = () => {
           <Text style={styles.forgotText}>Forgot Password ?</Text>
         </View>
         {isLoading ? (
-          <ActivityIndicator />
+          <ActivityIndicator  size={'large'} />
         ) : (
           <MyButton
             textColor={COLORS.black}
             bgColor={COLORS.lightGreen}
             Label="Login"
-            Press={LoginFunction}
+            press={LoginFunction}
           />
         )}
 

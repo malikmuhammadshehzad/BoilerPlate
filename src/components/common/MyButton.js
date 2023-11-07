@@ -5,6 +5,7 @@ import { FONT} from '../../assets';
 const MYButton = ({Label, press, bgColor, width='80%' , height=50, textColor}) => {
   return (
     <TouchableOpacity
+    onPress={press}
       style={{
         backgroundColor: bgColor,
         width: width,
@@ -14,7 +15,7 @@ const MYButton = ({Label, press, bgColor, width='80%' , height=50, textColor}) =
         flexDirection: 'row',
         borderRadius: 22,
       }}
-      onPress={press}>
+    >
       <Text
         style={{
           color: textColor,

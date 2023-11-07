@@ -12,11 +12,12 @@ const INITIAL_STATE = {
 export const loginUser = createAsyncThunk(
   'loginUser',
   async ( paramData , thunkApi) => {
+    console.log(paramData);
     try {
       const response = await api.post('/auth/login', paramData);
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.response.data);
+      return thunkApi.rejectWithValue(error);
     }
   },
 );
@@ -30,7 +31,8 @@ const AuthSlices = createSlice({
     });
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.userData = action.payload;
-      (isLoading = false), (isSuccess = true);
+      (isLoading = false), 
+      (isSuccess = true);
     });
     builder.addCase(loginUser.rejected, (state, action) => {
       state.errorMessage = action.payload.message;
