@@ -30,7 +30,6 @@ const LoginScreen = () => {
      
     await dispatch(loginUser(obj));
     console.log("userData:", userData);
-    navigation.navigate("home")
   };
 
   return (

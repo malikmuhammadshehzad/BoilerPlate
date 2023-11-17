@@ -12,15 +12,15 @@ const AppNavigation = () => {
     
         {userData ? (
           <>
-
-          <Stack.Screen name="home" component={HomeScreen} />
+            <Stack.Screen name="home" component={HomeScreen } />
           </>
         ) : (
           <>
-            <Stack.Screen name="login" component={LoginScreen} />
-            <Stack.Screen name="signup" component={SignupScreen} />
+           <Stack.Screen name="login" component={LoginScreen} />
+           <Stack.Screen name="signup" component={SignupScreen} />
           </>
         )}
+ 
       </Stack.Navigator>
     </NavigationContainer>
   );
