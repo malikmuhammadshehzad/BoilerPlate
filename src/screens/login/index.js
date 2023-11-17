@@ -22,15 +22,15 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
   const {userData, isLoading} = useSelector(state => state.Auth);
 
-  const LoginFunction = () => {
+  const LoginFunction = async () => {
     const obj = {
       username: userName,
       password: password,
     };
      
-    dispatch(loginUser(obj));
+    await dispatch(loginUser(obj));
     console.log("userData:", userData);
-    navigation.navigate('home')
+    navigation.navigate("home")
   };
 
   return (

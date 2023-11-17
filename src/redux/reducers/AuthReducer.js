@@ -1,12 +1,13 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
-import {api} from '../../api';
+import api from '../../api';
+ 
 
 const INITIAL_STATE = {
   userData: null,
   isLoading: false,
   isError: false,
   isSuccess: false,
-  errorMessage: '',
+ 
 };
 
 export const loginUser = createAsyncThunk(
@@ -14,15 +15,18 @@ export const loginUser = createAsyncThunk(
   async ( paramData , thunkApi) => {
     console.log(paramData);
     try {
-      const response = await api.post('/auth/login', paramData);
+      const response = await api.post('/auth/login', paramData );
+      console.log( 'api response:', response);
       return response.data;
-    } catch (error) {
+    } catch (error) {  
+      console.log('error:', error);
       return thunkApi.rejectWithValue(error);
     }
   },
 );
 const AuthSlices = createSlice({
-  name: 'Auth',
+ 
+  name: 'AuthReducer',
   initialState: INITIAL_STATE,
   reducers: {},
   extraReducers: builder => {
@@ -35,12 +39,13 @@ const AuthSlices = createSlice({
       (isSuccess = true);
     });
     builder.addCase(loginUser.rejected, (state, action) => {
-      state.errorMessage = action.payload.message;
+      
       state.isLoading = false;
       state.isError = true;
     });
   },
 });
+
 
 export default AuthSlices.reducer
 
