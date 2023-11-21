@@ -3,37 +3,34 @@ import React from 'react';
 
 import {COLORS, ICONS} from '../../assets';
 
-const SearchInput = (props) => {
-   
+const  PasswordInput = props => {
   return (
     <View style={styles.inputContainer}>
-    <ICONS.SearchIcon/>
-
       <TextInput
         {...props}
-        placeholderTextColor={COLORS.black}
-        placeholder={"Search..."}
+        placeholderTextColor={'black'}
         style={styles.input}
       />
+      <ICONS.EyeOffIcon/>
     </View>
   );
 };
 
-export default SearchInput;
+export default PasswordInput;
 
 const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: COLORS.lightGrey,
-
     height: 45,
     borderRadius: 22,
     alignItems: 'center',
     flexDirection: 'row',
     paddingLeft: 12,
+   width:'100%'
   },
   input: {
     marginLeft: 13,
-    width: '90%',
-    color: COLORS.black,
+    width: '85%',
+     
   },
 });

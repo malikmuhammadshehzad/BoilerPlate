@@ -11,8 +11,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../redux/reducers/AuthReducer';
  
 import styles from './style';
-import { MyButton, MyInput } from '../../components/common';
+import { MyButton, MyInput, PasswordInput } from '../../components/common';
 import { COLORS } from '../../assets';
+ 
  
 
 const LoginScreen = () => {
@@ -47,11 +48,14 @@ const LoginScreen = () => {
           onChangeText={text => setName(text)}
         />
         </View>
-        <MyInput
-          value={password}
-          placeholder="Password"
-          secureTextEntry={true}
-          onChangeText={text => setPassword(text)}
+        {/* <MyInput
+       
+        /> */}
+        <PasswordInput 
+           value={password}
+           placeholder="Password"
+           secureTextEntry={true}
+           onChangeText={text => setPassword(text)}
         />
         <View style={styles.forgotContainer}>
           <Text style={styles.forgotText}>Forgot Password ?</Text>

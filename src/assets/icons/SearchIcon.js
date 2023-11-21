@@ -1,6 +1,6 @@
 import * as React from "react"
 import Svg, { G, Path } from "react-native-svg"
-const  SearchIcon = ( {width=18 , height=16 , ...props}) => (
+  const  SearchIcon = ( {width=18 , height=16 , ...props}) => (
   <Svg  width={width} height={height}  fill="none" {...props}>
     <G
       stroke="#122704"
@@ -12,4 +12,6 @@ const  SearchIcon = ( {width=18 , height=16 , ...props}) => (
     </G>
   </Svg>
 )
-export default SearchIcon
+
+export  default SearchIcon
+ 
